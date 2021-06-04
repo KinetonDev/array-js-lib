@@ -78,6 +78,25 @@
         </label>
     </div>
 </div>
+<div class="function-block">
+    <div class="function-block__title">Chain function</div>
+    <div class="function-block__content">
+        <pre>
+            arraysLibrary
+                .chain([1,2,3,4,5,6])
+                .take(5)
+                .map((elem) => elem**2)
+                .skip(1)
+                .filter((elem) => elem > 20)
+                .reduce((accum,elem) => accum + elem, 10)
+                .value()
+        </pre>
+        <label>
+            Result:
+            <input type="text" class="function-block__result" id="chainer">
+        </label>
+    </div>
+</div>
 <script src="src/arrays.js"></script>
 <script src="src/index.js"></script>
 </body>
