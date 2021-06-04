@@ -1,11 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="src/styles/styles.css" type="text/css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<div class="function-block">
+    <div class="function-block__title">Take function</div>
+    <div class="function-block__content">
+        <pre>
+            arraysLibrary.take([1,2,3,4,5], 2)
+        </pre>
+        <label>
+            Result:
+            <input type="text" class="function-block__result" id="take">
+        </label>
+    </div>
+</div>
+<div class="function-block">
+    <div class="function-block__title">Skip function</div>
+    <div class="function-block__content">
+        <pre>
+            arraysLibrary.skip([1,2,3,4,5], 2)
+        </pre>
+        <label>
+            Result:
+            <input type="text" class="function-block__result" id="skip">
+        </label>
+    </div>
+</div>
+<div class="function-block">
+    <div class="function-block__title">Map function</div>
+    <div class="function-block__content">
+        <pre>
+            arraysLibrary.map([1,2,3,4,5], (elem) => elem**2)
+        </pre>
+        <label>
+            Result:
+            <input type="text" class="function-block__result" id="map">
+        </label>
+    </div>
+</div>
+<div class="function-block">
+    <div class="function-block__title">Reduce function</div>
+    <div class="function-block__content">
+        <pre>
+            arraysLibrary.reduce([1,2,3,4,5,6], (accum, elem) => accum + elem, 20)
+        </pre>
+        <label>
+            Result:
+            <input type="text" class="function-block__result" id="reduce">
+        </label>
+    </div>
+</div>
+<div class="function-block">
+    <div class="function-block__title">Filter function</div>
+    <div class="function-block__content">
+        <pre>
+            arraysLibrary.filter([1,2,3,4,5,6], (elem) => elem > 3)
+        </pre>
+        <label>
+            Result:
+            <input type="text" class="function-block__result" id="filter">
+        </label>
+    </div>
+</div>
+<div class="function-block">
+    <div class="function-block__title">ForEach function</div>
+    <div class="function-block__content">
+        <pre>
+            arraysLibrary.forEach([1,2,3,4,5,6], console.log)
+        </pre>
+        <label>
+            Result:
+            <input type="text" class="function-block__result" value="check console!" id="forEach">
+        </label>
+    </div>
+</div>
 <script src="src/arrays.js"></script>
 <script src="src/index.js"></script>
 </body>

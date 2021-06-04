@@ -76,13 +76,11 @@ function cacheDecorator(func) {
         let key = args.join();
 
         if (cache.has(key)) {
-            console.log("taken from cache")
             return cache.get(key);
         }
 
         let result = func(...arguments);
         cache.set(key, result);
-        console.log("calculated and set")
         return result;
     }
 }
