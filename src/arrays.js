@@ -67,7 +67,7 @@ function cacheDecorator(func) {
         let args = Array.from(arguments);
 
         args.forEach((elem) => {
-            if (elem.sort) {
+            if (elem instanceof Array) {
                 elem.sort();
             }
         });
@@ -89,3 +89,52 @@ skip = cacheDecorator(skip);
 map = cacheDecorator(map);
 reduce = cacheDecorator(reduce);
 filter = cacheDecorator(filter);
+
+class Chainer {
+    constructor(array) {
+        this.current = array;
+    }
+
+    take(n) {
+        let result = take(this.current, n);
+        this.current = result;
+        return this;
+    }
+
+    skip(n) {
+        let result = skip(this.current, n);
+        this.current = result;
+        return this;
+    }
+
+    map(callback) {
+        let result = map(this.current, callback);
+        this.current = result;
+        return this;
+    }
+
+    reduce(callback, initialValue) {
+        let result = reduce(this.current, callback, initialValue);
+        this.current = result;
+        return this;
+    }
+
+    filter(callback) {
+        let result = filter(this.current, callback);
+        this.current = result;
+        return this;
+    }
+
+    forEach(callback) {
+        forEach(this.current, callback);
+        return this;
+    }
+
+    value() {
+        return this.current;
+    }
+}
+
+function chain(array) {
+    return new Chainer(array);
+}
